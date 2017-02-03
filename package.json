@@ -31,8 +31,8 @@
   "typings": "index.d.ts",
   "peerDependencies": {
     "@ngx-translate/core": "^6.0.0-beta.1",
-    "@angular/core": "^2.3.0",
-    "@angular/http": "^2.3.0"
+    "@angular/core": ">=2.3.0 || >=4.0.0-beta.0",
+    "@angular/http": ">=2.3.0 || >=4.0.0-beta.0"
   },
   "devDependencies": {
     "@angular/common": "2.4.6",
