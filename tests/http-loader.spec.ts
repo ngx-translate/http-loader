@@ -20,9 +20,11 @@ describe('TranslateLoader', () => {
             imports: [
                 HttpModule,
                 TranslateModule.forRoot({
-                    provide: TranslateLoader,
-                    useFactory: (http: Http) => new TranslateHttpLoader(http),
-                    deps: [Http]
+                    loader: {
+                        provide: TranslateLoader,
+                        useFactory: (http: Http) => new TranslateHttpLoader(http),
+                        deps: [Http]
+                    }
                 })
             ],
             providers: [
