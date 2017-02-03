@@ -41,9 +41,11 @@ export function HttpLoaderFactory(http: Http) {
         BrowserModule,
         HttpModule,
         TranslateModule.forRoot({
-            provide: TranslateLoader,
-            useFactory: HttpLoaderFactory,
-            deps: [Http]
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [Http]
+            }
         })
     ],
     bootstrap: [AppComponent]
