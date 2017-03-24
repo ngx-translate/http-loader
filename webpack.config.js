@@ -49,7 +49,7 @@ module.exports = {
     plugins: [
         // fix the warning in ./~/@angular/webpack.config.js/src/linker/system_js_ng_module_factory_loader.js
         new webpack.ContextReplacementPlugin(
-            /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+            /angular(\\|\/)core(\\|\/)@angular/,
             helpers.root('./src')
         ),
 

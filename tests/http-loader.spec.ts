@@ -1,8 +1,16 @@
 import {Injector} from "@angular/core";
-import {ResponseOptions, Response, XHRBackend, HttpModule, Http} from "@angular/http";
-import {MockBackend, MockConnection} from "@angular/http/testing";
-import {TranslateService, TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {getTestBed, TestBed} from "@angular/core/testing";
+import {
+    BaseRequestOptions,
+    ConnectionBackend,
+    Http,
+    HttpModule,
+    RequestOptions,
+    Response,
+    ResponseOptions, XHRBackend
+} from "@angular/http";
+import {MockBackend, MockConnection} from "@angular/http/testing";
+import {TranslateLoader, TranslateModule, TranslateService} from "@ngx-translate/core";
 import {TranslateHttpLoader} from "../index";
 
 const mockBackendResponse = (connection: MockConnection, response: string) => {
@@ -12,7 +20,7 @@ const mockBackendResponse = (connection: MockConnection, response: string) => {
 describe('TranslateLoader', () => {
     let injector: Injector;
     let translate: TranslateService;
-    let backend: MockBackend;
+    let backend: any;
     let connection: MockConnection; // this will be set when a new connection is emitted from the backend.
 
     beforeEach(() => {
@@ -28,7 +36,9 @@ describe('TranslateLoader', () => {
                 })
             ],
             providers: [
-                {provide: XHRBackend, useClass: MockBackend}
+                {provide: XHRBackend, useClass: MockBackend},
+                {provide: ConnectionBackend, useClass: MockBackend},
+                {provide: RequestOptions, useClass: BaseRequestOptions}
             ]
         });
         injector = getTestBed();
