@@ -1,6 +1,6 @@
 # @ngx-translate/http-loader [![Build Status](https://travis-ci.org/ngx-translate/http-loader.svg?branch=master)](https://travis-ci.org/ngx-translate/http-loader) [![npm version](https://img.shields.io/npm/v/@ngx-translate/http-loader.svg)](https://www.npmjs.com/package/@ngx-translate/http-loader)
 
-A loader for [ngx-translate](https://github.com/ngx-translate/core) that loads translation using http.
+A loader for [ngx-translate](https://github.com/ngx-translate/core) that loads translations using http.
 
 Get the complete changelog here: https://github.com/ngx-translate/http-loader/releases
 
@@ -18,7 +18,6 @@ npm install @ngx-translate/http-loader --save
 ```
 
 ## Usage
-
 #### 1. Setup the `TranslateModule` to use the `TranslateHttpLoader`:
 
 The `TranslateHttpLoader` uses Http to load translations, which means that you have to import the HttpModule from `@angular/http` before the `TranslateModule`:
