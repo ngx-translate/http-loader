@@ -2,52 +2,67 @@
 # yarn lockfile v1
 
 
-"@angular/animations@4.1.3":
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-4.1.3.tgz#6e89a1e0fbfd6d0e90be4f2ae190aac67f83a411"
-
-"@angular/common@4.1.3":
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/@angular/common/-/common-4.1.3.tgz#e7c4791e32131cf74c239428c2a67daab2eef017"
-
-"@angular/compiler-cli@4.1.3":
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-4.1.3.tgz#c2362ffdf65756471481f839fab675bcac213f96"
+"@angular/animations@4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-4.3.1.tgz#1f7e0bb803efc21c608246e6765a1c647f3d1a5f"
   dependencies:
-    "@angular/tsc-wrapped" "4.1.3"
+    tslib "^1.7.1"
+
+"@angular/common@4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-4.3.1.tgz#260f487a7cdca326c436bd3ea9515c797de2ff72"
+  dependencies:
+    tslib "^1.7.1"
+
+"@angular/compiler-cli@4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-4.3.1.tgz#00b41afb6faeb4aef561b8427804ac8880aff63c"
+  dependencies:
+    "@angular/tsc-wrapped" "4.3.1"
     minimist "^1.2.0"
     reflect-metadata "^0.1.2"
 
-"@angular/compiler@4.1.3":
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-4.1.3.tgz#d2dd30853b0cf4a54758b4a314632c231f9c94c3"
+"@angular/compiler@4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-4.3.1.tgz#3a24d49ecf01ac2b6e07f63e378b8ff8e257fe09"
+  dependencies:
+    tslib "^1.7.1"
 
-"@angular/core@4.1.3":
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-4.1.3.tgz#285498eb86ab7d0b6f982f8f9f487ef610013b35"
+"@angular/core@4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-4.3.1.tgz#a9d0a7d644b96260674269b689a04feea632a8d3"
+  dependencies:
+    tslib "^1.7.1"
 
-"@angular/http@4.1.3":
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/@angular/http/-/http-4.1.3.tgz#eb9d1c302a0172815f9a573310d9be0bdeb845ae"
+"@angular/http@4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@angular/http/-/http-4.3.1.tgz#e4f661f746711e88ecbea76a3c905babf97d315a"
+  dependencies:
+    tslib "^1.7.1"
 
-"@angular/platform-browser-dynamic@4.1.3":
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.1.3.tgz#3c13fdcf591d487f6efdc1d46913f280c6d8c2ec"
+"@angular/platform-browser-dynamic@4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.3.1.tgz#84034da60a82ef36e7effda7b3ade6e645b330b3"
+  dependencies:
+    tslib "^1.7.1"
 
-"@angular/platform-browser@4.1.3":
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-4.1.3.tgz#4fa1db5119dd178b315ddae5b329bee1a932a5bd"
+"@angular/platform-browser@4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-4.3.1.tgz#db727b06eed64bda5defec71815db26a4da2f690"
+  dependencies:
+    tslib "^1.7.1"
 
-"@angular/platform-server@4.1.3":
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/@angular/platform-server/-/platform-server-4.1.3.tgz#bbfae42b15730357751da0e145d686f925a94431"
+"@angular/platform-server@4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@angular/platform-server/-/platform-server-4.3.1.tgz#3b915fc4013c6a947a8c147b4db0279b025936eb"
   dependencies:
     parse5 "^3.0.1"
+    tslib "^1.7.1"
     xhr2 "^0.1.4"
 
-"@angular/tsc-wrapped@4.1.3":
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/@angular/tsc-wrapped/-/tsc-wrapped-4.1.3.tgz#2d6372c9187bf1621eacd960b94b39c4f95293cd"
+"@angular/tsc-wrapped@4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@angular/tsc-wrapped/-/tsc-wrapped-4.3.1.tgz#f6616a4d2a3bbec1cded664fd1f526edce99ef41"
   dependencies:
     tsickle "^0.21.0"
 
