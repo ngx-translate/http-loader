@@ -17,7 +17,7 @@ Now you need to install the npm module for `TranslateHttpLoader`:
 npm install @ngx-translate/http-loader --save
 ```
 
-**NB: if you're still on Angular >4.3, please use Http from @angular/http with http-loader@0.1.0.**
+**NB: if you're still on Angular <4.3, please use Http from @angular/http with http-loader@0.1.0.**
 
 ## Usage
 #### 1. Setup the `TranslateModule` to use the `TranslateHttpLoader`:
