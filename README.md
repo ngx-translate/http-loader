@@ -17,33 +17,35 @@ Now you need to install the npm module for `TranslateHttpLoader`:
 npm install @ngx-translate/http-loader --save
 ```
 
+**NB: if you're still on Angular <4.3, please use Http from @angular/http with http-loader@0.1.0.**
+
 ## Usage
 #### 1. Setup the `TranslateModule` to use the `TranslateHttpLoader`:
 
-The `TranslateHttpLoader` uses Http to load translations, which means that you have to import the HttpModule from `@angular/http` before the `TranslateModule`:
+The `TranslateHttpLoader` uses HttpClient to load translations, which means that you have to import the HttpClientModule from `@angular/common/http` before the `TranslateModule`:
 
 ```ts
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {HttpModule, Http} from '@angular/http';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {AppComponent} from "./app";
 
 // AoT requires an exported function for factories
-export function HttpLoaderFactory(http: Http) {
+export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
 }
 
 @NgModule({
     imports: [
         BrowserModule,
-        HttpModule,
+        HttpClientModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
                 useFactory: HttpLoaderFactory,
-                deps: [Http]
+                deps: [HttpClient]
             }
         })
     ],
@@ -61,7 +63,7 @@ By using those default parameters, it will load your translations files for the 
 You can change those in the `HttpLoaderFactory` method that we just defined. For example if you want to load the "en" translations from `/public/lang-files/en-lang.json` you would use:
 
 ```ts
-export function HttpLoaderFactory(http: Http) {
+export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, "/public/lang-files/", "-lang.json");
 }
 ```
