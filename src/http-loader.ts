@@ -1,6 +1,5 @@
 import {HttpClient} from "@angular/common/http";
 import {TranslateLoader} from "@ngx-translate/core";
-import "rxjs/add/operator/map";
 
 export class TranslateHttpLoader implements TranslateLoader {
     constructor(private http: HttpClient, public prefix: string = "/assets/i18n/", public suffix: string = ".json") {}
