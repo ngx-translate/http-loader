@@ -69,3 +69,44 @@ export function HttpLoaderFactory(http: HttpClient) {
 ```
 
 For now this loader only support the json format.
+
+## Angular CLI/Webpack TranslateLoader Example
+If you are using Angular CLI (uses webpack under the hood) you can write your own `TranslateLoader` that always loads the latest translation file available during your application build.
+
+```typescript
+// webpack-translate-loader.ts
+import { TranslateLoader } from '@ngx-translate/core';
+import { Observable } from 'rxjs/Observable';
+
+export class WebpackTranslateLoader implements TranslateLoader {
+  getTranslation(lang: string): Observable<any> {
+    return Observable.fromPromise(System.import(`../assets/i18n/${lang}.json`));
+  }
+}
+```
+
+Cause `System` will not be available you need to add it to your custom `typings.d.ts`:
+```typescript
+declare var System: System;
+interface System {
+  import(request: string): Promise<any>;
+}
+```
+
+Now you can use the `WebpackTranslateLoader` with your `app.module`:
+```typescript
+@NgModule({
+  bootstrap: [AppComponent],
+  imports: [
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useClass: WebpackTranslateLoader
+      }
+    })
+  ]
+})
+export class AppModule { }
+```
+
+The disadvantage of this solution is that you have to rebuild the application everytime your translate files has changes.
