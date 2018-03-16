@@ -70,25 +70,22 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 For now this loader only support the json format.
 
-## Custom TranslateLoader strategies
-### HashTranslateLoader - Hashing translation files with angular-cli, webpack and SystemJS
-Allow caching of translation files by the browser could help to speed up the initial load of your app but with the default setup your translation files could miss the latest changes because the cache doesn't have the latest version of your translation file yet.
-
-When using the angular-cli (uses webpack under the hood) you can write your own `TranslateLoader` that always loads the latest translation file available during your application build.
+## Angular CLI/Webpack TranslateLoader Example
+If you are using Angular CLI (uses webpack under the hood) you can write your own `TranslateLoader` that always loads the latest translation file available during your application build.
 
 ```typescript
 // webpack-translate-loader.ts
 import { TranslateLoader } from '@ngx-translate/core';
 import { Observable } from 'rxjs/Observable';
 
-export class HashTranslateLoader implements TranslateLoader {
+export class WebpackTranslateLoader implements TranslateLoader {
   getTranslation(lang: string): Observable<any> {
     return Observable.fromPromise(System.import(`../assets/i18n/${lang}.json`));
   }
 }
 ```
 
-When your project cannot find `System` then adding this to your `typings.d.ts` file helps:
+Cause `System` will not be available you need to add it to your custom `typings.d.ts`:
 ```typescript
 declare var System: System;
 interface System {
@@ -96,7 +93,7 @@ interface System {
 }
 ```
 
-Now you can use the `HashTranslateLoader` with your `app.module`:
+Now you can use the `WebpackTranslateLoader` with your `app.module`:
 ```typescript
 @NgModule({
   bootstrap: [AppComponent],
@@ -104,7 +101,7 @@ Now you can use the `HashTranslateLoader` with your `app.module`:
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useClass: HashTranslateLoader
+        useClass: WebpackTranslateLoader
       }
     })
   ]
@@ -112,4 +109,4 @@ Now you can use the `HashTranslateLoader` with your `app.module`:
 export class AppModule { }
 ```
 
-One disadvantage of this solution is that you have to rebuild your application when there are only changes inside your language files.
+The disadvantage of this solution is that you have to rebuild the application everytime your translate files has changes.
