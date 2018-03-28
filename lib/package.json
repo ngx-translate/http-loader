@@ -21,7 +21,7 @@
   "peerDependencies": {
     "@ngx-translate/core": ">=10.0.0",
     "@angular/core": ">=6.0.0-rc.0",
-    "@angular/http": ">=6.0.0-rc.0"
+    "@angular/common": ">=6.0.0-rc.0"
   },
   "devDependencies": {
     "semantic-release": "8.2.3"
