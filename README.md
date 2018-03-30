@@ -57,10 +57,10 @@ export class AppModule { }
 ```
 
 The `TranslateHttpLoader` also has two optional parameters:
-- prefix: string = "/assets/i18n/"
+- prefix: string = "./assets/i18n/"
 - suffix: string = ".json"
 
-By using those default parameters, it will load your translations files for the lang "en" from: `/assets/i18n/en.json`.
+By using those default parameters, it will load your translations files for the lang "en" from: `./assets/i18n/en.json`.
 
 You can change those in the `HttpLoaderFactory` method that we just defined. For example if you want to load the "en" translations from `/public/lang-files/en-lang.json` you would use:
 
@@ -82,7 +82,7 @@ import { Observable } from 'rxjs/Observable';
 
 export class WebpackTranslateLoader implements TranslateLoader {
   getTranslation(lang: string): Observable<any> {
-    return Observable.fromPromise(System.import(`../assets/i18n/${lang}.json`));
+    return Observable.fromPromise(System.import(`.../assets/i18n/${lang}.json`));
   }
 }
 ```
