@@ -10,13 +10,13 @@
     "ngx-translate"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/ngx-translate/ngx-translate/projects/ngx-translate/http-loader",
+  "homepage": "https://github.com/ngx-translate/http-loader",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ngx-translate/ngx-translate.git"
+    "url": "git+https://github.com/ngx-translate/http-loader.git"
   },
   "bugs": {
-    "url": "https://github.com/ngx-translate/ngx-translate/issues"
+    "url": "https://github.com/ngx-translate/http-loader/issues"
   },
   "peerDependencies": {
     "@ngx-translate/core": ">=10.0.0",
