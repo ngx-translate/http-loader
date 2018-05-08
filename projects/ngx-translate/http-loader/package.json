@@ -1,10 +1,7 @@
 {
   "name": "@ngx-translate/http-loader",
   "description": "A loader for ngx-translate that loads translations using http",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ngx-translate/http-loader.git"
-  },
+  "author": "Olivier Combe",
   "keywords": [
     "angular",
     "angular 2",
@@ -12,16 +9,19 @@
     "translate",
     "ngx-translate"
   ],
-  "author": "Olivier Combe",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ngx-translate/http-loader/issues"
+  "homepage": "https://github.com/ngx-translate/ngx-translate/projects/ngx-translate/http-loader",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngx-translate/ngx-translate.git"
   },
-  "homepage": "https://github.com/ngx-translate/http-loader",
+  "bugs": {
+    "url": "https://github.com/ngx-translate/ngx-translate/issues"
+  },
   "peerDependencies": {
     "@ngx-translate/core": ">=10.0.0",
-    "@angular/core": ">=6.0.0-rc.0",
-    "@angular/common": ">=6.0.0-rc.0"
+    "@angular/common": ">=6.0.0",
+    "rxjs": ">=6.0.0"
   },
   "devDependencies": {
     "semantic-release": "8.2.3"

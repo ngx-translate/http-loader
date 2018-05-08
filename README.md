@@ -17,9 +17,14 @@ Now you need to install the npm module for `TranslateHttpLoader`:
 npm install @ngx-translate/http-loader --save
 ```
 
-**if you're still on Angular <4.3, please use Http from @angular/http with http-loader@0.1.0.**
+Choose the version corresponding to your Angular version:
 
-**If you're still using Angular v5, please use ngx-translate 9.x and http-loader 2.x, version 3 and above are only compatible with Angular v6. If you need to use RxJS 5, update to 5.6 and use the rxjs-compat library (see [the RxJS update guide](https://docs.google.com/document/d/12nlLt71VLKb-z3YaSGzUfx6mJbc34nsMXtByPUN35cg/preview#)).**
+ Angular     | @ngx-translate/core | @ngx-translate/http-loader
+ ----------- | ------------------- | --------------------------
+ 6           | 10.x+               | 3.x+
+ 5           | 8.x to 9.x          | 1.x to 2.x
+ 4.3         | 7.x or less         | 1.x to 2.x
+ 2 to 4.2.x  | 7.x or less         | 0.x
 
 ## Usage
 #### 1. Setup the `TranslateModule` to use the `TranslateHttpLoader`:
