@@ -2,6 +2,8 @@
 
 A loader for [ngx-translate](https://github.com/ngx-translate/core) that loads translations using http.
 
+Simple example using ngx-translate: https://stackblitz.com/github/ngx-translate/example
+
 Get the complete changelog here: https://github.com/ngx-translate/http-loader/releases
 
 * [Installation](#installation)
