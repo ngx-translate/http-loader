@@ -119,3 +119,8 @@ export class AppModule { }
 ```
 
 The disadvantage of this solution is that you have to rebuild the application everytime your translate files has changes.
+
+## Related projects
+
+Loading multiple translation files:
+[denniske/ngx-translate-multi-http-loader](https://github.com/denniske/ngx-translate-multi-http-loader).
