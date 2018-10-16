@@ -46,7 +46,7 @@ describe('TranslateLoader', () => {
     });
 
     // mock response after the xhr request, otherwise it will be undefined
-    http.expectOne('/assets/i18n/en.json').flush({
+    http.expectOne('./assets/i18n/en.json').flush({
       "TEST": "This is a test",
       "TEST2": "This is another test"
     });
@@ -69,11 +69,11 @@ describe('TranslateLoader', () => {
         expect(translate.instant('TEST')).toEqual('This is a test 2');
       });
 
-      http.expectOne('/assets/i18n/en.json').flush({"TEST": "This is a test 2"});
+      http.expectOne('./assets/i18n/en.json').flush({"TEST": "This is a test 2"});
     });
 
     // mock response after the xhr request, otherwise it will be undefined
-    http.expectOne('/assets/i18n/en.json').flush({"TEST": "This is a test"});
+    http.expectOne('./assets/i18n/en.json').flush({"TEST": "This is a test"});
   });
 
   it('should be able to reset a lang', (done: Function) => {
@@ -101,6 +101,6 @@ describe('TranslateLoader', () => {
     });
 
     // mock response after the xhr request, otherwise it will be undefined
-    http.expectOne('/assets/i18n/en.json').flush({"TEST": "This is a test"});
+    http.expectOne('./assets/i18n/en.json').flush({"TEST": "This is a test"});
   });
 });
