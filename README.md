@@ -30,7 +30,7 @@ Choose the version corresponding to your Angular version:
  2 to 4.2.x  | 7.x or less         | 0.x
 
 ## Usage
-#### 1. Setup the `TranslateModule` to use the `TranslateHttpLoader`:
+#### 1. Setup the `TranslateModule` to use the `TranslateHttpLoader`, `MultipleTranslateHttpLoader`:
 
 The `TranslateHttpLoader` uses HttpClient to load translations, which means that you have to import the HttpClientModule from `@angular/common/http` before the `TranslateModule`:
 
@@ -76,6 +76,44 @@ You can change those in the `HttpLoaderFactory` method that we just defined. For
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, "/public/lang-files/", "-lang.json");
 }
+```
+
+
+At times, we might require to load multiple translation files for application or module from different sources, `MultipleTranslateHttpLoader` comes very handy in such scenarios. The `MultipleTranslateHttpLoader` also uses HttpClient to load translations with mandatory second parameter `paths`, which means that you have to import the HttpClientModule from `@angular/common/http` before the `TranslateModule`:
+
+```ts
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {MultipleTranslateHttpLoader} from '@ngx-translate/http-loader';
+import {AppComponent} from "./app";
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  const paths=[ 
+    {prefix:'/assets/i18n/module/file1', suffix:'.json'},
+    {prefix:'/assets/i18n/module/file2', suffix:'.json'},
+    {prefix:'/assets/i18n/module/file3', suffix:'.json'}];
+
+    return new MultipleTranslateHttpLoader(http, paths);
+}
+
+@NgModule({
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        })
+    ],
+    bootstrap: [AppComponent]
+})
+export class AppModule { }
 ```
 
 For now this loader only support the json format.
