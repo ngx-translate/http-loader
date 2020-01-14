@@ -4,8 +4,6 @@ notifications:
   email: false
 node_js:
   - '10'
-services:
-  - xvfb
 before_install:
   - export CHROME_BIN=chromium-browser
   - if [[ `npm -v` != 6* ]]; then npm i -g npm@6; fi
@@ -19,5 +17,3 @@ after_success:
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
-before_script:
-  - export DISPLAY=:99.0
