@@ -15,7 +15,12 @@
             "tsConfig": "projects/ngx-translate/http-loader/tsconfig.lib.json",
             "project": "projects/ngx-translate/http-loader/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-translate/http-loader/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
