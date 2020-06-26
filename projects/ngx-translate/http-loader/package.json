@@ -19,9 +19,9 @@
     "url": "https://github.com/ngx-translate/http-loader/issues"
   },
   "peerDependencies": {
-    "@ngx-translate/core": ">=11.0.0",
-    "@angular/common": ">=7.0.0",
-    "rxjs": ">=6.3.0"
+    "@ngx-translate/core": ">=13.0.0",
+    "@angular/common": ">=10.0.0",
+    "rxjs": ">=6.5.3"
   },
   "scripts": {
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
