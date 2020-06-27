@@ -9,6 +9,24 @@ export class TranslateHttpLoader implements TranslateLoader {
    * Gets the translations from the server
    */
   public getTranslation(lang: string): Observable<Object> {
-    return this.http.get(`${this.prefix}${lang}${this.suffix}`);
+  	if (this.loadedTranslations != null && this.loadedTranslations[lang] != null) {
+  		return Observable.of(this.loadedTranslations[lang]);
+  	}
+  	return Observable.fromPromise(this.preLoad(lang));
+  }
+
+  /**
+   * Gets the translations from the server as Promise
+   * @param lang
+   * @returns Promise<any>
+   */
+  public preLoad(lang: string): Promise<any> {
+  	return this.http.get(`${this.prefix}${lang}${this.suffix}`)
+  		.toPromise()
+  		.then(result => {
+  			this.loadedTranslations[lang] = result;
+  			return result;
+  		})
+  		.catch(() => null); 
   }
 }
