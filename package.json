@@ -1,5 +1,6 @@
 {
   "name": "@ngx-translate/http-loader",
+  "version": "6.0.0",
   "description": "A loader for ngx-translate that loads translations using http",
   "scripts": {
     "build": "ng build",
