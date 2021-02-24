@@ -44,5 +44,8 @@
       }
     }
   },
-  "defaultProject": "@ngx-translate/http-loader"
+  "defaultProject": "@ngx-translate/http-loader",
+  "cli": {
+    "analytics": false
+  }
 }
