@@ -10,7 +10,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/ngx-translate/http-loader/tsconfig.lib.json",
             "project": "projects/ngx-translate/http-loader/ng-package.json"
@@ -27,18 +27,6 @@
             "main": "projects/ngx-translate/http-loader/test.ts",
             "tsConfig": "projects/ngx-translate/http-loader/tsconfig.spec.json",
             "karmaConfig": "projects/ngx-translate/http-loader/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ngx-translate/http-loader/tsconfig.lib.json",
-              "projects/ngx-translate/http-loader/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         }
       }
